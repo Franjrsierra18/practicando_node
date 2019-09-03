@@ -9,6 +9,13 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use(express.json());
+
 app.get('/', (req, res) => res.send('Hola express!'));
+
+app.post('/signup', (req,res) => {
+  console.log(req.headers);
+  res.send(req.body);
+})
 
 app.listen(3000, () => console.log('servidor levantado'));
